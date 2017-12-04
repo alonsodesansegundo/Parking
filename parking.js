@@ -40,6 +40,19 @@ class Parking {
         }
     }
 
+    /**
+     * @description Nos devuelve true o false
+     * @param {String} matricula Matricula del coche
+     * @return {Boolean} True, si lo encuentra. False, si no lo encuentra
+     */
+    buscarCoche(matricula) {
+        if (this.tunelLavado.indexOf(matricula) != -1 || this.coches.indexOf(matricula) != -1) {    //si la matricula del coche esta en tunelLavado o coches (colecciones)
+            return true //devuelvo true
+        } else {    //sino se cumple ninguna de las dos condiciones
+            return false    //devuelvo false
+        }
+    }
+
 }
 let parking = new Parking(1);
 
@@ -50,3 +63,5 @@ let coche1 = {
 
 console.log(parking.meterCoche(coche1))
 console.log(parking);
+
+console.log(parking.buscarCoche("G3456745"))
